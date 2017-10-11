@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>♥今の気持ち♥</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>気持ち</th>
+      <th>日付</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hearts.each do |heart| %>
+      <tr>
+        <td><%= heart.feeling %></td>
+        <td><%= heart.date %></td>
+        <td><%= link_to '詳細', heart %></td>
+        <td><%= link_to '変更', edit_heart_path(heart) %></td>
+        <td><%= link_to '削除', heart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新しい気持ちを登録', new_heart_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>気持ち:</strong>
+  <%= @heart.feeling %>
+</p>
+
+<p>
+  <strong>日付:</strong>
+  <%= @heart.date %>
+</p>
+
+<%= link_to '変更', edit_heart_path(@heart) %> |
+<%= link_to '戻る', hearts_path %>
