@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170928015229) do
 
-  create_table "plans", force: :cascade do |t|
+  create_table "diaries", force: :cascade do |t|
     t.date "date"
     t.text "comment"
     t.string "photo"
@@ -35,4 +35,5 @@ ActiveRecord::Schema.define(version: 20170928015229) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 end
