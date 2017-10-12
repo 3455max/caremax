@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :minds
   resources :plans
   resources :diaries 
   resources :hearts
