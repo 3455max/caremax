@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'sales/index'
 
+  resources :minds
   resources :plans
   resources :diaries 
   resources :hearts
@@ -38,5 +39,8 @@ Rails.application.routes.draw do
   get 'home/november' 
   get 'home/december' 
   
+  get 'home/calendar'
+  get 'home/menu'  
+  get 'home/select'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
