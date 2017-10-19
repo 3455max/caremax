@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sales/index'
+
   resources :plans
   resources :diaries 
   resources :hearts

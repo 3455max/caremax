@@ -67,10 +67,13 @@ GEM
     ffi (1.9.18-x86-mingw32)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    hash-deep-merge (0.1.1)
     i18n (0.8.6)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    lazy_high_charts (1.5.8)
+      hash-deep-merge
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -174,6 +177,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   coffee-script-source (= 1.8.0)
   jbuilder (~> 2.5)
+  lazy_high_charts
   puma (~> 3.7)
   rails (~> 5.1.4)
   sass-rails (~> 5.0)
