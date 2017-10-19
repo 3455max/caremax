@@ -25,6 +25,12 @@ class DiariesController < ApplicationController
   # POST /diaries.json
   def create
     @diary = Diary.new(diary_params)
+    @dairy.date =
+           Date.new(params[:daiary][:date(1i)].to_i,
+                    params[:daiary][:date(2i)].to_i,
+                    params[:daiary][:date(3i)].to_i)
+
+
 
     respond_to do |format|
       if @diary.save
