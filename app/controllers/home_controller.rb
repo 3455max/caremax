@@ -5,7 +5,19 @@ class HomeController < ApplicationController
   def calendar
   
     @today = Date.today
-    @now   = Date.current
+    
+    if params[:now]
+      @now = Date.strptime(params[:now])
+      if params[:number] == "1"
+        @now = @now.next_month
+      elsif params[:number] == "-1"
+        @now = @now.last_month
+      elsif params[:number] == "0"
+        @now = Date.current
+      end
+    else
+      @now = Date.current
+    end
 
   end
 

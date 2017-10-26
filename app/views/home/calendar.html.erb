@@ -3,15 +3,15 @@
 <% today = @today %>
 <% now = @now %>
 <table border="1">
- <caption><%= now.strftime('%Y年%m月') %></caption>
+ <caption><%= link_to"#{now.last_month.strftime('%m月')}",{controller:'home',action:'calendar',number:-1,now:now}%>　<%= link_to"#{now.strftime('%Y年%m月')}",{controller:'home',action:'calendar',number:0,now:now}%>　<%= link_to"#{now.next_month.strftime('%m月')}",{controller:'home',action:'calendar',number:1,now:now}%></caption>
  <tr height="50px">
-   <th width="120px" style="background: pink;"><span style="color: white;">日</span></th>
+   <th width="120px" style="background: lightcoral;"><span style="color: white;">日</span></th>
    <th width="120px" style="background: gray;"><span style="color: white;">月</span></th>
    <th width="120px" style="background: gray;"><span style="color: white;">火</span></th>
    <th width="120px" style="background: gray;"><span style="color: white;">水</span></th>
    <th width="120px" style="background: gray;"><span style="color: white;">木</span></th>
    <th width="120px" style="background: gray;"><span style="color: white;">金</span></th>
-   <th width="120px" style="background: skyblue;"><span style="color: white;">土</span></th>
+   <th width="120px" style="background: cornflowerblue;"><span style="color: white;">土</span></th>
  </tr>
  <tr>
 <% month = now.strftime('%m') %>
