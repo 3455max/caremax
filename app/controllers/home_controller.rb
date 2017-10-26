@@ -2,6 +2,13 @@ class HomeController < ApplicationController
   def main
   end
 
+  def calendar
+  
+    @today = Date.today
+    @now   = Date.current
+
+  end
+
   def january    # (...データベースからのデータ取得処理...)
     # ダミーのデータを用意
     @end_at = Date.new(2017,1,31)
