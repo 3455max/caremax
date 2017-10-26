@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+<strong>Id:</strong>
+<%= @mind.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mind.name %>
+</p>
+
 <%= link_to 'Edit', edit_mind_path(@mind) %> |
 <%= link_to 'Back', minds_path %>

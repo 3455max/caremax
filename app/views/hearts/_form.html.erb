@@ -12,8 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :気持ち %>
-    <%= form.text_field :feeling, id: :heart_feeling %>
+  <%= form_for @heart do |f| %>
+    <%= form.label :feeling %>
+    <%= form.select :mind_id, Mind.all.map{ |b| [b.name, b.id] } %>
   </div>
 
   <div class="field">
@@ -24,4 +25,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+  <% end %>
 <% end %>

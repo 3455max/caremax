@@ -17,7 +17,7 @@ class MindsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create mind" do
     assert_difference('Mind.count') do
-      post minds_url, params: { mind: {  } }
+      post minds_url, params: { mind: { name: @mind.name } }
     end
 
     assert_redirected_to mind_url(Mind.last)
@@ -34,7 +34,7 @@ class MindsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update mind" do
-    patch mind_url(@mind), params: { mind: {  } }
+    patch mind_url(@mind), params: { mind: { name: @mind.name } }
     assert_redirected_to mind_url(@mind)
   end
 

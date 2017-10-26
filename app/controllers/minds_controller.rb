@@ -69,6 +69,6 @@ class MindsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mind_params
-      params.fetch(:mind, {})
+      params.require(:mind).permit(:name)
     end
 end

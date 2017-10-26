@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +13,7 @@
   <tbody>
     <% @minds.each do |mind| %>
       <tr>
+        <td><%= mind.name %></td>
         <td><%= link_to 'Show', mind %></td>
         <td><%= link_to 'Edit', edit_mind_path(mind) %></td>
         <td><%= link_to 'Destroy', mind, method: :delete, data: { confirm: 'Are you sure?' } %></td>
