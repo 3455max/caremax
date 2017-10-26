@@ -69,6 +69,6 @@ class HeartsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def heart_params
-      params.require(:heart).permit(:feeling, :date)
+      params.require(:heart).permit(:feeling, :date, :mind_id)
     end
 end
