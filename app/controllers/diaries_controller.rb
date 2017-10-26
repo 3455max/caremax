@@ -24,38 +24,45 @@ class DiariesController < ApplicationController
   # POST /diaries
   # POST /diaries.json
   def create
-    @diary = Diary.new(diary_params)
-    @dairy.date =
-           Date.new(params[:daiary][:date(1i)].to_i,
-                    params[:daiary][:date(2i)].to_i,
-                    params[:daiary][:date(3i)].to_i)
+    @diary = Diary.new
+    @diary.date = Date.new(params[:diary][:'date(1i)'].to_i,
+                           params[:diary][:'date(2i)'].to_i,
+                           params[:diary][:'date(3i)'].to_i)
+    @diary.comment = params[:diary][:comment]
 
+    if params[:diary][:photo].present?
+      @diary.photo      = params[:diary][:photo].original_filename
+      @diary.photo_type = params[:diary][:photo].content_type
+      @diary.photo_data = params[:diary][:photo].read
+    end
 
-
-    respond_to do |format|
-      if @diary.save
-        format.html { redirect_to @diary, notice: 'Diary was successfully created.' }
-        format.json { render :show, status: :created, location: @diary }
-      else
-        format.html { render :new }
-        format.json { render json: @diary.errors, status: :unprocessable_entity }
-      end
+    if @diary.save
+      redirect_to diaries_path
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /diaries/1
   # PATCH/PUT /diaries/1.json
   def update
-    respond_to do |format|
-      if @diary.update(diary_params)
-        format.html { redirect_to @diary, notice: 'Diary was successfully updated.' }
-        format.json { render :show, status: :ok, location: @diary }
-      else
-        format.html { render :edit }
-        format.json { render json: @diary.errors, status: :unprocessable_entity }
-      end
+     @diary.date = Date.new(params[:diary][:'date(1i)'].to_i,
+                            params[:diary][:'date(2i)'].to_i,
+                            params[:diary][:'date(3i)'].to_i)
+     @diary.comment = params[:diary][:comment]
+
+    if params[:diary][:photo].present?
+         @diary.photo      = params[:diary][:photo].original_filename
+         @diary.photo_type = params[:diary][:photo].content_type
+         @diary.photo_data = params[:diary][:photo].read
     end
-  end
+
+    if @diary.save
+      redirect_to diaries_path
+    else
+      render :edit
+    end
+  end      
 
   # DELETE /diaries/1
   # DELETE /diaries/1.json
@@ -65,6 +72,11 @@ class DiariesController < ApplicationController
       format.html { redirect_to diaries_url, notice: 'Diary was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def show_image
+    @diary = Diary.find(params[:id])
+    send_data @diary.photo_data, :filename => @diary.photo, :type => @diary.photo_type, :disposition => 'inline'
   end
 
   private

@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   resources :minds
   resources :plans
   resources :diaries 
+  resources :diaries do
+    member do
+      get 'show_image'
+    end
+  end
   resources :hearts
   resources :chart
   resources :january

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171012020903) do
+ActiveRecord::Schema.define(version: 20171023012737) do
 
   create_table "diaries", force: :cascade do |t|
     t.date "date"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20171012020903) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_type"
+    t.binary "photo_data"
   end
 
   create_table "hearts", force: :cascade do |t|

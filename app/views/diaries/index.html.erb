@@ -22,7 +22,13 @@
       <tr>
         <td><%= diary.date %></td>
         <td><%= diary.comment %></td>
-        <td><%= diary.photo %></td>
+        <td>
+        <% if diary.photo.present? %>
+          <%= diary.photo %>
+          <br>
+          <%= image_tag show_image_diary_path(diary), :width => 100 %>
+        <% end %>
+        </td>
         <td><%= link_to '見る', diary %></td>
         <td><%= link_to '書き直す', edit_diary_path(diary) %></td>
         <td><%= link_to '消す', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
