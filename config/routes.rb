@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :musics
+  resources :movies
+  resources :glads
   get 'sales/index'
 
   resources :minds

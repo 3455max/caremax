@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>音楽一覧</h1>
+
+<table>
+  <thead>
+   <tr>
+      <th><%= "😊うれしいを選んだ君↓" %>
+    <tr>  
+    <tr>
+      <th><%= "😢悲しいを選んだ君↓" %>
+    </tr>
+    <tr>
+      <th><%= "😤腹立つを選んだ君↓" %>
+    </tr>
+    <tr>
+      <td><%= link_to '①ジブリ:ギター', 'https://youtu.be/wKl8nO5y5PY' %>
+  　</th> 
+    <tr>
+      <td><%= link_to '②ディズニー:オルゴール', 'https://youtu.be/0EOyiuf2uWQ' %>
+    </tr>
+    <tr>
+      <th><%= "😭泣きたいを選んだ君↓" %>
+    </tr>
+    <tr>      
+      <th><%= "😆笑いたいを選んだ君↓" %>
+    </tr> 
+   
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @musics.each do |music| %>
+      <tr>
+        <td><%= link_to 'Show', music %></td>
+        <td><%= link_to 'Edit', edit_music_path(music) %></td>
+        <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
