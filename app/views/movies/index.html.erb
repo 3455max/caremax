@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>動画一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= "😊うれしいを選んだ君↓" %>
+    <tr>  
+    <tr>
+      <th><%= "😢悲しいを選んだ君↓" %>
+    </tr>
+    <tr>
+      <th><%= "😤腹立つを選んだ君↓" %>
+    </tr>
+    <tr>
+      <th><%= "😭泣きたいを選んだ君↓" %>
+    </tr>
+    <tr>
+      <td><%= link_to '①鉄拳:振り子', 'https://youtu.be/EB19So6SNe0' %>
+    </tr>
+    <tr>
+      <td><%= link_to '③象の背中:旅立ちの日', 'https://youtu.be/SO47Y6x20d8' %>
+    </tr>
+    <tr>      
+      <th><%= "😆笑いたいを選んだ君↓" %>
+    </tr> 
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= link_to 'Show', movie %></td>
+        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
