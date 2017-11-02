@@ -1,0 +1,2 @@
+class Glad < ApplicationRecord
+end

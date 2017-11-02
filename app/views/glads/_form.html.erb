@@ -1,0 +1,17 @@
+<%= form_with(model: glad, local: true) do |form| %>
+  <% if glad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(glad.errors.count, "error") %> prohibited this glad from being saved:</h2>
+
+      <ul>
+      <% glad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
