@@ -4,25 +4,19 @@
 
 <table>
   <thead>
-    <tr>
-      <th>日付</th>
-    </tr>
-    <tr>
-      <th>内容</th>
-    </tr>
-    <tr>
-      <th>写真</th>
-    </tr>
-      <th colspan="3"></th>
-    </tr>
+
   </thead>
 
   <tbody>
     <% @diaries.each do |diary| %>
       <tr>
-        <td><%= diary.date %></td>
-        <td><%= diary.comment %></td>
-        <td>
+        <th>日付</th><td><%= diary.date %></td>
+      </tr>
+      <tr>
+        <th>内容</th><td width="300"><%= diary.comment %></td>
+      </tr>
+      <tr>
+        <th>写真</th><td>
         <% if diary.photo.present? %>
           <%= diary.photo %>
           <br>
@@ -41,3 +35,4 @@
 
 <%= link_to '日記を書く', new_diary_path %>
 <%= link_to 'メニュー画面に戻る', home_menu_path %>
+<%= link_to 'カレンダーに戻る', home_calendar_path %>
