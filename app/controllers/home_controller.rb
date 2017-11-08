@@ -61,13 +61,16 @@ class HomeController < ApplicationController
     
     @hearts.each do |heart|
       @dates << heart.date.strftime("%d日")
-      @feelings << heart.mind.id
+      @feelings << 6-heart.mind.id
     end
+
+    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']    
 
     # グラフ（チャート）を作成 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|    
      # c.title(text: "")
       c.xAxis(categories: @dates)
+      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
       c.series(name: "気持ち", data: @feelings)
     end
   end
@@ -83,13 +86,16 @@ class HomeController < ApplicationController
     
     @hearts.each do |heart|
       @dates << heart.date.strftime("%d日")
-      @feelings << heart.mind.id
+      @feelings << 6-heart.mind.id
     end
 
+    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
+    
     # グラフ（チャート）を作成 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|    
      # c.title(text: "")
       c.xAxis(categories: @dates)
+      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
       c.series(name: "気持ち", data: @feelings)
     end
   end
@@ -105,13 +111,16 @@ class HomeController < ApplicationController
     
     @hearts.each do |heart|
       @dates << heart.date.strftime("%d日")
-      @feelings << heart.mind.id
+      @feelings << 6-heart.mind.id
     end
 
+    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
+    
     # グラフ（チャート）を作成 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|    
      # c.title(text: "")
       c.xAxis(categories: @dates)
+      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
       c.series(name: "気持ち", data: @feelings)
     end
   end
@@ -127,13 +136,16 @@ class HomeController < ApplicationController
     
     @hearts.each do |heart|
       @dates << heart.date.strftime("%d日")
-      @feelings << heart.mind.id
+      @feelings << 6-heart.mind.id
     end
 
+    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
+    
     # グラフ（チャート）を作成 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|    
      # c.title(text: "")
       c.xAxis(categories: @dates)
+      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
       c.series(name: "気持ち", data: @feelings)
     end
   end
@@ -149,13 +161,16 @@ class HomeController < ApplicationController
     
     @hearts.each do |heart|
       @dates << heart.date.strftime("%d日")
-      @feelings << heart.mind.id
+      @feelings << 6-heart.mind.id
     end
 
+    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
+    
     # グラフ（チャート）を作成 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|    
      # c.title(text: "")
       c.xAxis(categories: @dates)
+      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
       c.series(name: "気持ち", data: @feelings)
     end
   end
@@ -170,13 +185,16 @@ class HomeController < ApplicationController
     
     @hearts.each do |heart|
       @dates << heart.date.strftime("%d日")
-      @feelings << heart.mind.id
+      @feelings << 6-heart.mind.id
     end
 
+    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
+    
     # グラフ（チャート）を作成 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|    
      # c.title(text: "")
       c.xAxis(categories: @dates)
+      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
       c.series(name: "気持ち", data: @feelings)
     end
   end
@@ -190,13 +208,16 @@ class HomeController < ApplicationController
     
     @hearts.each do |heart|
       @dates << heart.date.strftime("%d日")
-      @feelings << heart.mind.id
+      @feelings << 6-heart.mind.id
     end
 
+    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
+    
     # グラフ（チャート）を作成 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|    
      # c.title(text: "")
       c.xAxis(categories: @dates)
+      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
       c.series(name: "気持ち", data: @feelings)
     end
   end
@@ -211,13 +232,16 @@ class HomeController < ApplicationController
     
     @hearts.each do |heart|
       @dates << heart.date.strftime("%d日")
-      @feelings << heart.mind.id
+      @feelings << 6-heart.mind.id
     end
 
+    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
+    
     # グラフ（チャート）を作成 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|    
      # c.title(text: "")
       c.xAxis(categories: @dates)
+      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
       c.series(name: "気持ち", data: @feelings)
     end
   end
@@ -233,13 +257,16 @@ class HomeController < ApplicationController
     
     @hearts.each do |heart|
       @dates << heart.date.strftime("%d日")
-      @feelings << heart.mind.id
+      @feelings << 6-heart.mind.id
     end
 
+    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
+    
     # グラフ（チャート）を作成 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|    
      # c.title(text: "")
       c.xAxis(categories: @dates)
+      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
       c.series(name: "気持ち", data: @feelings)
     end
   end
@@ -253,13 +280,16 @@ class HomeController < ApplicationController
     
     @hearts.each do |heart|
       @dates << heart.date.strftime("%d日")
-      @feelings << heart.mind.id
+      @feelings << 6-heart.mind.id
     end
 
+    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
+    
     # グラフ（チャート）を作成 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|    
      # c.title(text: "")
       c.xAxis(categories: @dates)
+      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
       c.series(name: "気持ち", data: @feelings)
     end
   end
@@ -274,13 +304,16 @@ class HomeController < ApplicationController
     
     @hearts.each do |heart|
       @dates << heart.date.strftime("%d日")
-      @feelings << heart.mind.id
+      @feelings << 6-heart.mind.id
     end
 
+    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
+    
     # グラフ（チャート）を作成 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|    
      # c.title(text: "")
       c.xAxis(categories: @dates)
+      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
       c.series(name: "気持ち", data: @feelings)
     end
   end
