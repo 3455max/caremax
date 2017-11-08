@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>📚 日記</h1>
+<h1>📚 <%= @push_day %> の日記 📚</h1>
 
 <table>
   <thead>
@@ -9,9 +9,6 @@
 
   <tbody>
     <% @diaries.each do |diary| %>
-      <tr>
-        <th>日付</th><td><%= diary.date %></td>
-      </tr>
       <tr>
         <th>内容</th><td width="300"><%= diary.comment %></td>
       </tr>
@@ -32,7 +29,9 @@
 </table>
 
 <br>
-
-<%= link_to '日記を書く', new_diary_path %>
+<% if @diaries.blank? %>
+  <%= link_to '日記を書く', new_diary_path %>
+<% end %> 
 <%= link_to 'メニュー画面に戻る', home_menu_path %>
 <%= link_to 'カレンダーに戻る', home_calendar_path %>
+<%= link_to "選択画面に戻る",{controller: 'home', action: 'select'}%>

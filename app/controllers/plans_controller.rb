@@ -4,7 +4,13 @@ class PlansController < ApplicationController
   # GET /plans
   # GET /plans.json
   def index
-    @plans = Plan.all
+    @push_day = session[:push_day]
+
+    s_day = Date.strptime(@push_day,'%Y-%m-%d')
+    e_day = s_day + 1
+
+    @plans = Plan.where(date: s_day...e_day)
+    
   end
 
   # GET /plans/1
@@ -15,6 +21,8 @@ class PlansController < ApplicationController
   # GET /plans/new
   def new
     @plan = Plan.new
+    @push_day = session[:push_day]
+    
   end
 
   # GET /plans/1/edit

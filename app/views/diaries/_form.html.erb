@@ -13,7 +13,11 @@
 
   <div class="field">
     <%= form.label "日付" %>
-    <%= form.date_select :date, id: :diary_date, :readonly=>true %>
+    <%= @push_day %>
+    <% day = @push_day.split("-") %>
+    <%= form.hidden_field "date(1i)", value: day[0] %>
+    <%= form.hidden_field "date(2i)", value: day[1] %>
+    <%= form.hidden_field "date(3i)", value: day[2] %>   
   </div>
 
   <div class="field">
