@@ -4,7 +4,13 @@ class DiariesController < ApplicationController
   # GET /diaries
   # GET /diaries.json
   def index
-    @diaries = Diary.all
+    @push_day = session[:push_day]
+    
+     s_day = Date.strptime(@push_day,'%Y-%m-%d')
+     e_day = s_day + 1
+    
+     @diaries = Diary.where(date: s_day...e_day)
+    
   end
 
   # GET /diaries/1
@@ -15,6 +21,7 @@ class DiariesController < ApplicationController
   # GET /diaries/new
   def new
     @diary = Diary.new
+    @push_day = session[:push_day]
   end
 
   # GET /diaries/1/edit

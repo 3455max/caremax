@@ -1,34 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>予定</h1>
+<h1>💭 <%= @push_day %> の予定 💭</h1>
 
 <table>
   <thead>
-    <tr>
-      <th>月日</th>
-    </tr>
-    <tr>
     <th>だれと？</th>
-    </tr>
-    <tr>
       <th>どこで？</th>
-    </tr>
-    <tr> 
       <th>何を？</th>
-    </tr>
       <th colspan="3"></th>
   </thead>
 
   <tbody>
     <% @plans.each do |plan| %>
       <tr>
-        <td><%= plan.date %></td>
         <td><%= plan.people %></td>
         <td><%= plan.where %></td>
         <td><%= plan.what %></td>
-        <td><%= link_to 'Show', plan %></td>
-        <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
-        <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', plan %></td>
+        <td><%= link_to '変更', edit_plan_path(plan) %></td>
+        <td><%= link_to '削除', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -37,4 +27,6 @@
 <br>
 
 <%= link_to '予定を追加', new_plan_path %>
-<%= link_to 'メニュー画面に戻る', home_menu_path %>
+<p><%= link_to 'カレンダーに戻る', home_calendar_path %></p>
+<%= link_to "選択画面に戻る",{controller: 'home', action: 'select'}%>
+

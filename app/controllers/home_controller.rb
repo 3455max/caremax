@@ -21,6 +21,14 @@ class HomeController < ApplicationController
 
   end
 
+  def select
+    if params[:push_day]
+      session[:push_day] = params[:push_day]
+   end
+
+   @push_day = session[:push_day]
+  end
+
   def january    # (...データベースからのデータ取得処理...)
     # ダミーのデータを用意
     @end_at = Date.new(2017,1,31)
