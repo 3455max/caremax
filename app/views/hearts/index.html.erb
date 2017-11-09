@@ -16,7 +16,7 @@
       <tr>
         <td>
         <% unless heart.mind.blank? %>
-        <%= heart.mind.name %>
+        <%=link_to heart.mind.name, glads_path(:mind_id=>heart.mind) %>
         <% end %>
         </td>
         <td><%= heart.date %></td>
