@@ -26,6 +26,7 @@ class DiariesController < ApplicationController
 
   # GET /diaries/1/edit
   def edit
+    @push_day = session[:push_day]
   end
 
   # POST /diaries
