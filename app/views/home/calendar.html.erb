@@ -1,4 +1,4 @@
-<h1>カレンダー</h1><h3>日にちをクリックしてね</h3>
+<h1>📅 カレンダー</h1><h3>日にちをクリックしてね</h3>
 
 <% today = @today %>
 <% now = @now %>
@@ -20,7 +20,7 @@
   <tr height="120px">
 <% (d..d.end_of_week(:sunday)).each do |c| %>
     <td align="center" style="background: <%= (c == today) ? "cornsilk" : "white" %>;">
-      <a href = "http://localhost:3000/home/select"><%= (c.strftime('%m') == month) ? c.strftime('%d') : " " %></a>
+      <%= link_to "#{(c.strftime('%m') == month) ? c.strftime('%d') : " "}",{controller: 'home', action: 'select', push_day: c}%>
     </td>
 <% end %>
   </tr>
