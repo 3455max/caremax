@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20171101012045) do
   end
 
   create_table "glads", force: :cascade do |t|
+    t.text "meigen"
+    t.integer "mind_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -12,7 +12,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @diary.photo %>
+  <%= image_tag show_image_diary_path(@diary), :width => 300 %>
 </p>
 
 <%= link_to 'Edit', edit_diary_path(@diary) %> |

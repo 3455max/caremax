@@ -4,7 +4,7 @@ class HeartsController < ApplicationController
   # GET /hearts
   # GET /hearts.json
   def index
-    @hearts = Heart.all
+    @hearts = Heart.all    
   end
 
   # GET /hearts/1
