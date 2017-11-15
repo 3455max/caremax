@@ -14,7 +14,11 @@
   <tbody>
     <% @hearts.each do |heart| %>
       <tr>
-        <td><%= heart.mind.name %></td>
+        <td>
+        <% unless heart.mind.blank? %>
+        <%=link_to heart.mind.name, glads_path(:mind_id=>heart.mind) %>
+        <% end %>
+        </td>
         <td><%= heart.date %></td>
         <td><%= link_to '詳細', heart %></td>
         <td><%= link_to '変更', edit_heart_path(heart) %></td>

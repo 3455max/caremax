@@ -4,7 +4,10 @@ class MindsController < ApplicationController
   # GET /minds
   # GET /minds.json
   def index
-    @minds = Mind.all
+    if params[:mind_id].present?
+      @minds = Mind.where(mind_id:params[:mind_id])
+     end    
+  
   end
 
   # GET /minds/1

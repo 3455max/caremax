@@ -4,7 +4,11 @@ class GladsController < ApplicationController
   # GET /glads
   # GET /glads.json
   def index
-    @glads = Glad.all
+    if params[:mind_id].present?
+      @glads = Glad.where(mind_id:params[:mind_id])
+    else    
+     @glads = Glad.all
+    end 
   end
 
   # GET /glads/1
@@ -69,6 +73,7 @@ class GladsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def glad_params
-      params.fetch(:glad, {})
+      #params.fetch(:glad, {})
+      params.require(:glad).permit(:meigen, :mind_id)
     end
 end

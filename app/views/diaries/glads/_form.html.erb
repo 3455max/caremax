@@ -11,6 +11,16 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :mind %>
+    <%= form.select :mind_id, Mind.all.map{ |b| [b.name, b.id] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meigen %>
+    <%= form.text_area :meigen, id: :glad_meigen %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
