@@ -2,7 +2,7 @@
 
 <h1>📙 <%= @push_day %> の予定 📙</h1>
 
-<table>
+<table style="font-size: 130%;">
   <thead>
     <th>だれと？</th>
       <th>どこで？</th>
@@ -16,9 +16,9 @@
         <td><%= plan.people %></td>
         <td><%= plan.where %></td>
         <td><%= plan.what %></td>
-        <td><%= link_to '詳細', plan %></td>
-        <td><%= link_to '変更', edit_plan_path(plan) %></td>
-        <td><%= link_to '削除', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td style="font-size: 130%;"><%= link_to '詳細', plan %></td>
+        <td style="font-size: 130%;"><%= link_to '変更', edit_plan_path(plan) %></td>
+        <td style="font-size: 130%;"><%= link_to '削除', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,7 +26,7 @@
 
 <br>
 
-<%= link_to '予定を追加', new_plan_path %>
+<p><%= link_to '予定を追加', new_plan_path %></p>
 <p><%= link_to 'カレンダーに戻る', home_calendar_path %></p>
-<%= link_to "選択画面に戻る",{controller: 'home', action: 'select'}%>
+<p><%= link_to "選択画面に戻る",{controller: 'home', action: 'select'}%></p>
 

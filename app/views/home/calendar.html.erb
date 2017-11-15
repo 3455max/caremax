@@ -1,10 +1,10 @@
-<h1>📅 カレンダー</h1><h3>日にちをクリックしてね</h3>
+<h1>📅 カレンダー</h1><h2>日にちをクリックしてね</h2>
 
 <% today = @today %>
 <% now = @now %>
-<table border="1">
+<table border="1" style="font-size: 130%;">
  <caption><%= link_to"#{now.last_month.strftime('%m月')}",{controller:'home',action:'calendar',number:-1,now:now}%>　<%= link_to"#{now.strftime('%Y年%m月')}",{controller:'home',action:'calendar',number:0,now:now}%>　<%= link_to"#{now.next_month.strftime('%m月')}",{controller:'home',action:'calendar',number:1,now:now}%></caption>
- <tr height="50px">
+ <tr height="50px" style="font-size: 130%;">
    <th width="120px" style="background: lightcoral;"><span style="color: white;">日</span></th>
    <th width="120px" style="background: gray;"><span style="color: white;">月</span></th>
    <th width="120px" style="background: gray;"><span style="color: white;">火</span></th>
@@ -19,7 +19,7 @@
 <% 1.upto(5).each do |i| %>
   <tr height="120px">
 <% (d..d.end_of_week(:sunday)).each do |c| %>
-    <td align="center" style="background: <%= (c == today) ? "cornsilk" : "white" %>;">
+    <td align="center" style="background: <%= (c == today) ? "cornsilk" : "white" %>;font-size: 130%;">
       <%= link_to "#{(c.strftime('%m') == month) ? c.strftime('%d') : " "}",{controller: 'home', action: 'select', push_day: c}%>
     </td>
 <% end %>
@@ -28,6 +28,6 @@
 <% end %>
 </table>    
 
-<p><a href = "http://localhost:3000/home/menu">メニューに戻る</a></p>
+<p style="font-size: 200%;"><a href = "http://localhost:3000/home/menu">メニューに戻る</a></p>
 
 
