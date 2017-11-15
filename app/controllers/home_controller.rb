@@ -32,9 +32,80 @@ class HomeController < ApplicationController
   def january   
     @start_at = Date.new(2017,1,1)
     @end_at = (@start_at >> 1) - 1
+    @chart = common_process(@start_at,@end_at)
+  end
+
+  def february   
+    @start_at = Date.new(2017,2,1)
+    @end_at = (@start_at >> 1) - 1
+    @chart = common_process(@start_at,@end_at)
+  end
+
+  def march   
+    @start_at = Date.new(2017,3,1)
+    @end_at = (@start_at >> 1) - 1
+    @chart = common_process(@start_at,@end_at)
+  end
+
+  def april   
+    @start_at = Date.new(2017,4,1)
+    @end_at = (@start_at >> 1) - 1
+    @chart = common_process(@start_at,@end_at)
+  end
+
+  def may   
+    @start_at = Date.new(2017,5,1)
+    @end_at = (@start_at >> 1) - 1
+    @chart = common_process(@start_at,@end_at)
+  end
+
+  def june   
+    @start_at = Date.new(2017,6,1)
+    @end_at = (@start_at >> 1) - 1
+    @chart = common_process(@start_at,@end_at)
+  end
+
+  def july   
+    @start_at = Date.new(2017,7,1)
+    @end_at = (@start_at >> 1) - 1
+    @chart = common_process(@start_at,@end_at)
+  end
+
+  def august   
+    @start_at = Date.new(2017,8,1)
+    @end_at = (@start_at >> 1) - 1
+    @chart = common_process(@start_at,@end_at)
+  end
+
+  def september  
+    @start_at = Date.new(2017,9,1)
+    @end_at = (@start_at >> 1) - 1
+    @chart = common_process(@start_at,@end_at)
+  end
+
+  def october   
+    @start_at = Date.new(2017,10,1)
+    @end_at = (@start_at >> 1) - 1
+    @chart = common_process(@start_at,@end_at)
+  end
+
+  def november   
+    @start_at = Date.new(2017,11,1)
+    @end_at = (@start_at >> 1) - 1
+    @chart = common_process(@start_at,@end_at)
+  end
+
+  def december    
+    @start_at = Date.new(2017,12,1)
+    @end_at = (@start_at >> 1) - 1
+    @chart = common_process(@start_at,@end_at)
+  end
+
+  private
+  def common_process(start_at,end_at)
     @feelings = []
     @dates = []
-    @hearts = Heart.where(date:@start_at..@end_at)
+    @hearts = Heart.where(date:start_at..end_at)
     
     @hearts.each do |heart|
       @dates << heart.date.strftime("%d日")
@@ -48,246 +119,6 @@ class HomeController < ApplicationController
       c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
       c.series(name: "気持ち", data: @feelings)
     end
+    return @chart 
   end
-
-  def february   
-    @start_at = Date.new(2017,2,1)
-    @end_at = (@start_at >> 1) - 1
-
-    @feelings = []
-    @dates = []
-    @hearts = Heart.where(date:@start_at..@end_at)
-    
-    @hearts.each do |heart|
-      @dates << heart.date.strftime("%d日")
-      @feelings << 6-heart.mind.id
-    end
-
-    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']    
-
-    @chart = LazyHighCharts::HighChart.new("graph") do |c|    
-      c.xAxis(categories: @dates)
-      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
-      c.series(name: "気持ち", data: @feelings)
-    end
-  end
-
-  def march   
-    @start_at = Date.new(2017,3,1)
-    @end_at = (@start_at >> 1) - 1
-
-    @feelings = []
-    @dates = []
-    @hearts = Heart.where(date:@start_at..@end_at)
-    
-    @hearts.each do |heart|
-      @dates << heart.date.strftime("%d日")
-      @feelings << 6-heart.mind.id
-    end
-
-    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
-    
-    @chart = LazyHighCharts::HighChart.new("graph") do |c|    
-      c.xAxis(categories: @dates)
-      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
-      c.series(name: "気持ち", data: @feelings)
-    end
-  end
-
-  def april   
-    @start_at = Date.new(2017,4,1)
-    @end_at = (@start_at >> 1) - 1
-
-    @feelings = []
-    @dates = []
-    @hearts = Heart.where(date:@start_at..@end_at)
-    
-    @hearts.each do |heart|
-      @dates << heart.date.strftime("%d日")
-      @feelings << 6-heart.mind.id
-    end
-
-    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
-    
-    @chart = LazyHighCharts::HighChart.new("graph") do |c|    
-      c.xAxis(categories: @dates)
-      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
-      c.series(name: "気持ち", data: @feelings)
-    end
-  end
-
-  def may   
-    @start_at = Date.new(2017,5,1)
-    @end_at = (@start_at >> 1) - 1
-
-    @feelings = []
-    @dates = []
-    @hearts = Heart.where(date:@start_at..@end_at)
-    
-    @hearts.each do |heart|
-      @dates << heart.date.strftime("%d日")
-      @feelings << 6-heart.mind.id
-    end
-
-    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
-    
-    @chart = LazyHighCharts::HighChart.new("graph") do |c|    
-      c.xAxis(categories: @dates)
-      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
-      c.series(name: "気持ち", data: @feelings)
-    end
-  end
-
-  def june   
-    @start_at = Date.new(2017,6,1)
-    @end_at = (@start_at >> 1) - 1
-
-    @feelings = []
-    @dates = []
-    @hearts = Heart.where(date:@start_at..@end_at)
-    
-    @hearts.each do |heart|
-      @dates << heart.date.strftime("%d日")
-      @feelings << 6-heart.mind.id
-    end
-
-    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
-    
-    @chart = LazyHighCharts::HighChart.new("graph") do |c|    
-      c.xAxis(categories: @dates)
-      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
-      c.series(name: "気持ち", data: @feelings)
-    end
-  end
-
-  def july   
-    @start_at = Date.new(2017,7,1)
-    @end_at = (@start_at >> 1) - 1
-
-    @feelings = []
-    @dates = []
-    @hearts = Heart.where(date:@start_at..@end_at)
-    
-    @hearts.each do |heart|
-      @dates << heart.date.strftime("%d日")
-      @feelings << 6-heart.mind.id
-    end
-
-    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
-    
-    @chart = LazyHighCharts::HighChart.new("graph") do |c|    
-      c.xAxis(categories: @dates)
-      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
-      c.series(name: "気持ち", data: @feelings)
-    end
-  end
-  def august   
-    @start_at = Date.new(2017,8,1)
-    @end_at = (@start_at >> 1) - 1
-
-    @feelings = []
-    @dates = []
-    @hearts = Heart.where(date:@start_at..@end_at)
-    
-    @hearts.each do |heart|
-      @dates << heart.date.strftime("%d日")
-      @feelings << 6-heart.mind.id
-    end
-
-    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
-    
-    @chart = LazyHighCharts::HighChart.new("graph") do |c|    
-      c.xAxis(categories: @dates)
-      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
-      c.series(name: "気持ち", data: @feelings)
-    end
-  end
-
-  def september  
-    @start_at = Date.new(2017,9,1)
-    @end_at = (@start_at >> 1) - 1
-
-    @feelings = []
-    @dates = []
-    @hearts = Heart.where(date:@start_at..@end_at)
-    
-    @hearts.each do |heart|
-      @dates << heart.date.strftime("%d日")
-      @feelings << 6-heart.mind.id
-    end
-
-    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
-    
-    @chart = LazyHighCharts::HighChart.new("graph") do |c|    
-      c.xAxis(categories: @dates)
-      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
-      c.series(name: "気持ち", data: @feelings)
-    end
-  end
-
-  def october   
-    @start_at = Date.new(2017,10,1)
-    @end_at = (@start_at >> 1) - 1
-
-    @feelings = []
-    @dates = []
-    @hearts = Heart.where(date:@start_at..@end_at)
-    
-    @hearts.each do |heart|
-      @dates << heart.date.strftime("%d日")
-      @feelings << 6-heart.mind.id
-    end
-
-    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
-    
-    @chart = LazyHighCharts::HighChart.new("graph") do |c|    
-      c.xAxis(categories: @dates)
-      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
-      c.series(name: "気持ち", data: @feelings)
-    end
-  end
-  def november   
-    @start_at = Date.new(2017,11,1)
-    @end_at = (@start_at >> 1) - 1
-
-    @feelings = []
-    @dates = []
-    @hearts = Heart.where(date:@start_at..@end_at)
-    
-    @hearts.each do |heart|
-      @dates << heart.date.strftime("%d日")
-      @feelings << 6-heart.mind.id
-    end
-
-    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
-    
-    @chart = LazyHighCharts::HighChart.new("graph") do |c|    
-      c.xAxis(categories: @dates)
-      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
-      c.series(name: "気持ち", data: @feelings)
-    end
-  end
-
-  def december    
-    @start_at = Date.new(2017,12,1)
-    @end_at = (@start_at >> 1) - 1
-
-    @feelings = []
-    @dates = []
-    @hearts = Heart.where(date:@start_at..@end_at)
-    
-    @hearts.each do |heart|
-      @dates << heart.date.strftime("%d日")
-      @feelings << 6-heart.mind.id
-    end
-
-    @feels = ['','腹立つ','笑いたい','悲しい','泣きたい','嬉しい']
-    
-    @chart = LazyHighCharts::HighChart.new("graph") do |c|    
-      c.xAxis(categories: @dates)
-      c.yAxis(title: {text:""}, categories: @feels, gridLineColor: "#ffffff")
-      c.series(name: "気持ち", data: @feelings)
-    end
-  end
-
 end
