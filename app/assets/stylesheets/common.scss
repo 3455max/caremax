@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Rounded';
-  src: font-url('rounded-x-mplus-1p-black.ttf') format('truetype');
+  src: font-url('erizi.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -11,7 +11,7 @@
   font-style: normal;
 }
 * {
-	font-family: 'Rounded2';
+  font-family: 'Rounded';
 }
 
 body {
@@ -19,5 +19,13 @@ body {
 }
 
 h1 {
-	font-family: 'Rounded';
+  font-family: 'Rounded';
+}
+
+p {
+  font-size: 160%!important;
+}
+
+div{
+  font-size: 160%;
 }

@@ -2,7 +2,7 @@
 
 <h1>📖 <%= @push_day %> の日記 📖</h1>
 
-<table>
+<table style="font-size: 130%;">
   <thead>
 
   </thead>
@@ -19,9 +19,9 @@
           <%= image_tag show_image_diary_path(diary), :width => 300 %>
         <% end %>
         </td>
-        <td><%= link_to '見る', diary %></td>
-        <td><%= link_to '書き直す', edit_diary_path(diary) %></td>
-        <td><%= link_to '消す', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td style="font-size: 130%;"><%= link_to '見る', diary %></td>
+        <td style="font-size: 130%;"><%= link_to '書き直す', edit_diary_path(diary) %></td>
+        <td style="font-size: 130%;"><%= link_to '消す', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,7 +29,7 @@
 
 <br>
 <% if @diaries.blank? %>
-  <%= link_to '日記を書く', new_diary_path %>
+  <p><%= link_to '日記を書く', new_diary_path %></p>
 <% end %> 
 <p><%= link_to 'カレンダーに戻る', home_calendar_path %></p>
 <p><%= link_to "選択画面に戻る",{controller: 'home', action: 'select'}%></p>
