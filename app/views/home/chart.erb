@@ -1,15 +1,68 @@
 <h1>グラフ</h1>
-<p><font size="3"><%= link_to '１月', home_january_path %></font>
-<font size="3"><%= link_to '２月', home_february_path %></font>
-<font size="3"><%= link_to '３月', home_march_path %></font></p>
-<p><font size="3"><%= link_to '４月', home_april_path %></h2></p>
-<p><font size="3"><%= link_to '５月', home_may_path %></h2></p>
-<p><h2><%= link_to '６月', home_june_path %></h2></p>
-<p><h2><%= link_to '７月', home_july_path %></h2></p>
-<p><h2><%= link_to '８月', home_august_path %></h2></p>
-<p><h2><%= link_to '９月', home_september_path %></h2></p>
-<p><h2><%= link_to '１０月', home_october_path %></h2></p>
-<p><h2><%= link_to '１１月', home_november_path %></h2></p>
-<p><h2><%= link_to '１２月', home_december_path %></h2></p>
+
+<svg width="100%" height="550">
+<circle id="circle1" 
+        style="fill:pink;opacity:0.3" 
+        cx="50%" cy="50%" r="250" stroke="black" stroke-width="8"> 
+
+    <!--サイズ変更-->
+    <animateTransform attributeName="transform" 
+            type="scale" 
+            values="1 1 ; 3 3 ; 1 1" 
+            additive="sum" 
+            dur="3" 
+            repeatDur="indefinite"/>
+
+</circle>
+        <defs>
+                  <path id="path1" d="M75,20 a1,1 0 0,0 100,0"/>
+        </defs>
+        <text x="44%" y="9%" style="fill:red;">
+                   <textPath xlink:href="#circle1"><%= link_to '１２', home_december_path %></textPath>
+        </text>
+        <text x="60%" y="50%" style="fill:red;">
+                   <textPath xlink:href="#circle1"><%= link_to '３', home_march_path %></textPath>
+        </text>
+        <text x="44%" y="91%" style="fill:red;">
+                   <textPath xlink:href="#circle1"><%= link_to '６', home_june_path %></textPath>
+        </text>
+        <text x="28%" y="50%" style="fill:red;">
+                   <textPath xlink:href="#circle1"><%= link_to '９', home_september_path %></textPath>
+        </text>
+        <text x="53%" y="17%" style="fill:red;">
+                   <textPath xlink:href="#circle1"><%= link_to '１', home_january_path %></textPath>
+        </text>
+        <text x="58%" y="30%" style="fill:red;">
+                   <textPath xlink:href="#circle1"><%= link_to '２', home_february_path %></textPath>
+        </text>
+        <text x="58%" y="68%" style="fill:red;">
+                   <textPath xlink:href="#circle1"><%= link_to '４', home_april_path %></textPath>
+        </text>
+        <text x="53%" y="84%" style="fill:red;">
+                   <textPath xlink:href="#circle1"><%= link_to '５', home_may_path %></textPath>
+        </text>
+        <text x="35%" y="84%" style="fill:red;">
+                   <textPath xlink:href="#circle1"><%= link_to '７', home_july_path %></textPath>
+        </text>
+        <text x="30%" y="68%" style="fill:red;">
+                   <textPath xlink:href="#circle1"><%= link_to '８', home_august_path %></textPath>
+        </text>
+        <text x="30%" y="30%" style="fill:red;">
+                   <textPath xlink:href="#circle1"><%= link_to '１０', home_october_path %></textPath>
+        </text>
+        <text x="35%" y="17%" style="fill:red;">
+                   <textPath xlink:href="#circle1"><%= link_to '１１', home_november_path %></textPath>
+        </text>
+        <text x="45%" y="50%" style="fill:red;">
+                   <textPath xlink:href="#circle1">→</textPath>
+        </text>
+        <text x="44.5%" y="49.5%" style="fill:red;">
+                   <textPath xlink:href="#circle1">↑</textPath>
+        </text>
+
+</svg>
 
 <br><%= link_to 'メニュー画面に戻る', home_menu_path %></br>
+
+<div style="position:absolute; top:600px; left:-140px;"><%= image_tag '横からケアマックス.jpg',:width => 400 %></div>
+<div style="position:absolute; top:600px; left:260px;"><%= image_tag '何月を見る.jpg',:width => 200 %></div>
