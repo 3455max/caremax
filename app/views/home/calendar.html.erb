@@ -1,4 +1,5 @@
-<h1>📅 カレンダー</h1><h2>日にちをクリックしてね</h2>
+<h1>📅 カレンダー</h1><h2>日にちをクリックしてね</h2><div style="position:absolute; top:7px; left:260px;"><%= image_tag 'バイバイケアマックス２.gif',:width => 120  %></div>
+
 
 <% today = @today %>
 <% now = @now %>
@@ -16,7 +17,7 @@
  <tr>
 <% month = now.strftime('%m') %>
 <% d = now.at_beginning_of_month.at_beginning_of_week(:sunday) %>
-<% 1.upto(5).each do |i| %>
+<% 1.upto(6).each do |i| %>
   <tr height="120px">
 <% (d..d.end_of_week(:sunday)).each do |c| %>
     <td align="center" style="background: <%= (c == today) ? "khaki" : "white" %>;font-size: 130%;">
