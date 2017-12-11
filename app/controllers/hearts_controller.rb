@@ -25,16 +25,15 @@ class HeartsController < ApplicationController
   # POST /hearts.json
   def create
     @heart = Heart.new(heart_params)
-
-    respond_to do |format|
-      if @heart.save
-        format.html { redirect_to @heart, notice: 'Heart was successfully created.' }
-        format.json { render :show, status: :created, location: @heart }
-      else
-        format.html { render :new }
-        format.json { render json: @heart.errors, status: :unprocessable_entity }
-      end
-    end
+    @heart.feeling    =params[:heart][:feeling]
+    day = params[:heart]['date(1i)'] + "-" + params[:heart]['date(2i)'] + "-" + params[:heart]['date(3i)']
+    @heart.date = Date.strptime(day,'%Y-%m-%d')
+    
+  if @heart.save
+    redirect_to hearts_path
+  else
+    render :new
+  end
   end
 
   # PATCH/PUT /hearts/1
@@ -65,6 +64,7 @@ class HeartsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_heart
       @heart = Heart.find(params[:id])
+      @push_day = session[:push_day]      
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
