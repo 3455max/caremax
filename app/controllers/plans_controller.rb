@@ -27,6 +27,8 @@ class PlansController < ApplicationController
 
   # GET /plans/1/edit
   def edit
+    @push_day = session[:push_day]
+    
   end
 
   # POST /plans
