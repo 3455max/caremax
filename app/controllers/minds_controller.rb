@@ -6,7 +6,9 @@ class MindsController < ApplicationController
   def index
     if params[:mind_id].present?
       @minds = Mind.where(mind_id:params[:mind_id])
-     end    
+    else
+      @minds = Mind.all      
+    end    
   
   end
 
