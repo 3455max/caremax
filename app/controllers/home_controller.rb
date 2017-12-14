@@ -106,13 +106,17 @@ class HomeController < ApplicationController
     @feelings = []
     @dates = []
     @hearts = Heart.where(date:start_at..end_at)
-    
+logger.debug("********")
+logger.debug(@hearts.inspect)
+logger.debug(start_at)
+logger.debug(end_at)
+logger.debug("********")
     @hearts.each do |heart|
       @dates << heart.date.strftime("%d日")
       @feelings << 6-heart.mind.id
     end
 
-    @feels = ['','腹立つ','悲しい','泣きたい','笑いたい','嬉しい']
+    @feels = ['','腹立つ','悲しい','泣きたい','笑いたい','うれしい']
 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|    
       c.xAxis(categories: @dates)
