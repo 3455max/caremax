@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>名言</th>
-      <th>気持ち</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +14,7 @@
     <% @glads.each do |glad| %>
       <tr>
         <td><%= glad.meigen %></td>
-      　<td><%= glad.mind.name %></td>
+      　<td><% glad.mind.name %></td>
         <td><%= link_to 'Show', glad %></td>
         <td><%= link_to 'Edit', edit_glad_path(glad) %></td>
         <td><%= link_to 'Destroy', glad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,5 +29,6 @@
 <%= link_to '音楽', musics_path %>
 <%= link_to '動画', movies_path %>
 
-
+<div style="position:absolute; top:180px; left:690px;"><%= image_tag 'ケアマックス白抜き.gif',:width => 180  %></div>
+<div style="position:absolute; top:135px; left:500px;"><%= image_tag 'メイン吹き出し.gif',:width => 200 %></div>
 
