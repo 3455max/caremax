@@ -11,11 +11,15 @@
   font-style: normal;
 }
 * {
-  font-family: 'Rounded';
+  font-family: 'Rounded'!important;
+  #background-color:cornsilk;
+  
 }
 
 body {
-  background-color:cornsilk!important;
+    
+  background-color:cornsilk;
+  
 }
 
 h1 {
