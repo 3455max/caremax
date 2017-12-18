@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
-
+<div align="center" style="margin-top:230px;">
 <h1>📙 <%= @push_day %> の予定 📙</h1>
 
 <table style="font-size: 130%;">
-  <thead>
+<thead>
     <th>だれと？</th>
       <th>どこで？</th>
       <th>何を？</th>
@@ -12,14 +12,14 @@
 
   <tbody>
     <% @plans.each do |plan| %>
-      <tr>
-        <td><%= plan.people %></td>
-        <td><%= plan.where %></td>
-        <td><%= plan.what %></td>
+      <p><tr>
+        <td style="font-size: 130%;"><%= plan.people %></td>
+        <td style="font-size: 130%;"><%= plan.where %></td>
+        <td style="font-size: 130%;"><%= plan.what %></td>
         <td style="font-size: 130%;"><%= link_to '詳細', plan %></td>
         <td style="font-size: 130%;"><%= link_to '変更', edit_plan_path(plan) %></td>
         <td style="font-size: 130%;"><%= link_to '削除', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      </tr></p>
     <% end %>
   </tbody>
 </table>
