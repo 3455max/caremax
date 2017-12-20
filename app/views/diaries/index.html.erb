@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div align="center" style="margin-top:200px;">
 <h1>📖 <%= @push_day %> の日記 📖</h1>
 
 <table style="font-size: 130%;">
@@ -10,7 +10,7 @@
   <tbody>
     <% @diaries.each do |diary| %>
       <tr>
-        <th>内容</th><td width="300"><%= diary.comment %></td>
+        <th>内容</th><td width="400",td style="font-size: 100%;"><%= diary.comment %></td>
       </tr>
       <tr>
         <th>写真</th><td>

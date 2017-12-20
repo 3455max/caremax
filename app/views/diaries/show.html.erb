@@ -1,19 +1,21 @@
+<div align="center" style="margin-top:170px;">
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Date:</strong>
+  <strong>いつ:</strong>
   <%= @diary.date %>
 </p>
 
 <p>
-  <strong>Comment:</strong>
+  <strong>内容:</strong>
   <%= @diary.comment %>
 </p>
 
 <p>
-  <strong>Photo:</strong>
+  <strong>写真:</strong>
   <%= image_tag show_image_diary_path(@diary), :width => 300 %>
 </p>
 
-<%= link_to 'Edit', edit_diary_path(@diary) %> |
-<%= link_to 'Back', diaries_path %>
+<%= link_to '変更', edit_diary_path(@diary) %> |
+<%= link_to '戻る', diaries_path %>
