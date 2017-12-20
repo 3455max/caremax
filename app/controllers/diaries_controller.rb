@@ -77,7 +77,7 @@ class DiariesController < ApplicationController
   def destroy
     @diary.destroy
     respond_to do |format|
-      format.html { redirect_to diaries_url, notice: 'Diary was successfully destroyed.' }
+      format.html { redirect_to diaries_url, notice: '今日の日記を削除しました。' }
       format.json { head :no_content }
     end
   end
