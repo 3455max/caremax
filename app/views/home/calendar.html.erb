@@ -20,7 +20,7 @@
 <% 1.upto(6).each do |i| %>
   <tr height="120px">
 <% (d..d.end_of_week(:sunday)).each do |c| %>
-    <td align="center" style="background: <%= (c == today) ? "khaki" : "white" %>;font-size: 130%;">
+    <td align="center" style="background: <%= (c == today) ? "moccasin" : "white" %>;font-size: 130%;">
       <%= link_to "#{(c.strftime('%m') == month) ? c.strftime('%d') : " "}",{controller: 'home', action: 'select', push_day: c}%>
     </td>
 <% end %>
