@@ -1,8 +1,13 @@
 <h1>グラフ</h1>
 
+<% today = @today %>
+<% now = @now %>
+<div align="center" style="margin-top:0px;"><h2><%= @push_year %><%= "年" %></h2>
+<h3><caption><%= link_to "#{(@today.year-4)}"+"年" , {controller: 'home', action: 'chart', push_year: @today.year-4} %>　<%= link_to "#{(@today.year-3)}"+"年" , {controller: 'home', action: 'chart', push_year: @today.year-3} %>　<%= link_to "#{(@today.year-2)}"+"年" , {controller: 'home', action: 'chart', push_year: @today.year-2} %> <%= link_to "#{(@today.year-1)}"+"年" , {controller: 'home', action: 'chart', push_year: @today.year-1} %> <%= link_to "#{(@today.year)}"+"年" , {controller: 'home', action: 'chart', push_year: @today.year} %></caption></h3>
+
 <svg width="102%" height="550">
 <circle id="circle1" 
-        style="fill:#e3acae;opacity:1.0" 
+        style="fill:#f8f4e6;opacity:1.0" 
         cx="50%" cy="50%" r="250" stroke="#7b5544" stroke-width="15">
 
     <!--サイズ変更-->
@@ -18,46 +23,46 @@
                   <path id="path1" d="M75,20 a1,1 0 0,0 100,0"/>
         </defs>
         <text x="26%" y="15%" style="fill:#4e454a;font-size:55px">
-                   <textPath xlink:href="#circle1"><%= link_to '12', home_december_path %></textPath>
+                   <textPath xlink:href="#circle1"><%= link_to '12', {controller: 'home', action: 'december', push_year: @push_year} %></textPath>
         </text>
         <text x="43%" y="53%" style="fill:#4e454a;font-size:55px">
-                   <textPath xlink:href="#circle1"><%= link_to '3', home_march_path %></textPath>
+                   <textPath xlink:href="#circle1"><%= link_to '3', {controller: 'home', action: 'march', push_year: @push_year} %></textPath>
         </text>
         <text x="26.5%" y="91%" style="fill:#4e454a;font-size:55px">
-                   <textPath xlink:href="#circle1"><%= link_to '6', home_june_path %></textPath>
+                   <textPath xlink:href="#circle1"><%= link_to '6', {controller: 'home', action: 'june', push_year: @push_year} %></textPath>
         </text>
         <text x="11%" y="53%" style="fill:#4e454a;font-size:55px">
-                   <textPath xlink:href="#circle1"><%= link_to '9', home_september_path %></textPath>
+                   <textPath xlink:href="#circle1"><%= link_to '9', {controller: 'home', action: 'september', push_year: @push_year} %></textPath>
         </text>
         <text x="35%" y="20%" style="fill:#4e454a;font-size:55px">
-                   <textPath xlink:href="#circle1"><%= link_to '1', home_january_path %></textPath>
+                   <textPath xlink:href="#circle1"><%= link_to '1', {controller: 'home', action: 'january', push_year: @push_year} %></textPath>
         </text>
         <text x="41%" y="35%" style="fill:#4e454a;font-size:55px">
-                   <textPath xlink:href="#circle1"><%= link_to '2', home_february_path %></textPath>
+                   <textPath xlink:href="#circle1"><%= link_to '2', {controller: 'home', action: 'february', push_year: @push_year} %></textPath>
         </text>
         <text x="41%" y="70%" style="fill:#4e454a;font-size:55px">
-                   <textPath xlink:href="#circle1"><%= link_to '4', home_april_path %></textPath>
+                   <textPath xlink:href="#circle1"><%= link_to '4', {controller: 'home', action: 'april', push_year: @push_year} %></textPath>
         </text>
         <text x="34.5%" y="86%" style="fill:#4e454a;font-size:55px">
-                   <textPath xlink:href="#circle1"><%= link_to '5', home_may_path %></textPath>
+                   <textPath xlink:href="#circle1"><%= link_to '5', {controller: 'home', action: 'may', push_year: @push_year} %></textPath>
         </text>
         <text x="18.5%" y="86%" style="fill:#4e454a;font-size:55px">
-                   <textPath xlink:href="#circle1"><%= link_to '7', home_july_path %></textPath>
+                   <textPath xlink:href="#circle1"><%= link_to '7', {controller: 'home', action: 'july', push_year: @push_year} %></textPath>
         </text>
         <text x="13%" y="70%" style="fill:#4e454a;font-size:55px">
-                   <textPath xlink:href="#circle1"><%= link_to '8', home_august_path %></textPath>
+                   <textPath xlink:href="#circle1"><%= link_to '8', {controller: 'home', action: 'august', push_year: @push_year} %></textPath>
         </text>
         <text x="12.5%" y="35%" style="fill:#4e454a;font-size:55px">
-                   <textPath xlink:href="#circle1"><%= link_to '10', home_october_path %></textPath>
+                   <textPath xlink:href="#circle1"><%= link_to '10', {controller: 'home', action: 'october', push_year: @push_year} %></textPath>
         </text>
         <text x="18%" y="20%" style="fill:#4e454a;font-size:55px">
-                   <textPath xlink:href="#circle1"><%= link_to '11', home_november_path %></textPath>
+                   <textPath xlink:href="#circle1"><%= link_to '11', {controller: 'home', action: 'november', push_year: @push_year} %></textPath>
         </text>
 
 </svg>
 
-<br><div align="center"><h2><%= link_to 'メニュー画面に戻る', home_menu_path %></h2></div>
+<br><div align="center"><h3><%= link_to 'メニュー画面に戻る', home_menu_path %></h3></div>
 
 <div style="position:absolute; top:450px; left:-140px;"><%= image_tag '横からケアマックス.gif',:width => 400 %></div>
 <div style="position:absolute; top:450px; left:200px;"><%= image_tag '何月を見る？.gif',:width => 200 %></div>
-<div style="position:absolute; top:260px; left:624px;"><%= image_tag '針.gif',:width => 130 %></div>
+<div style="position:absolute; top:350px; left:624px;"><%= image_tag '針.gif',:width => 130 %></div>

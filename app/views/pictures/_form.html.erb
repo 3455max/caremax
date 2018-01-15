@@ -1,0 +1,30 @@
+<%= form_with(model: picture, local: true) do |form| %>
+  <% if picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+
+      <ul>
+      <% picture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  <%= form_for @picture do |f| %>
+    <%= form.label '気持ち' %>
+    <%= form.select :heart, Mind.all.map{ |b| [b.name, b.id] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label '画像' %>
+    <%= form.file_field :filename %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<% end %>
