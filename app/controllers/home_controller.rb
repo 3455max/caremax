@@ -29,74 +29,109 @@ class HomeController < ApplicationController
    @push_day = session[:push_day]
   end
 
+  def chart
+    @today = Date.today
+
+    if params[:now]
+      @now = Date.strptime(params[:now])
+      if params[:number] == "1"
+        @now = @now.next_year
+      elsif params[:number] == "-1"
+        @now = @now.last_year
+      elsif params[:number] == "0"
+        @now = Date.current
+      end
+    else
+      @now = Date.current
+    end
+
+    if params[:push_year]
+      session[:push_year] = params[:push_year]
+    end
+  
+    @push_year = session[:push_year]
+  end
+
   def january   
-    @start_at = Date.new(2017,1,1)
+    p_year = params[:push_year]
+    @start_at = Date.new(p_year.to_i,1,1)
     @end_at = (@start_at >> 1) - 1
     @chart = common_process(@start_at,@end_at)
   end
 
   def february   
-    @start_at = Date.new(2017,2,1)
+    p_year = params[:push_year]
+    @start_at = Date.new(p_year.to_i,2,1)
     @end_at = (@start_at >> 1) - 1
     @chart = common_process(@start_at,@end_at)
   end
 
   def march   
-    @start_at = Date.new(2017,3,1)
+    p_year = params[:push_year]
+    @start_at = Date.new(p_year.to_i,3,1)
     @end_at = (@start_at >> 1) - 1
     @chart = common_process(@start_at,@end_at)
   end
 
   def april   
-    @start_at = Date.new(2017,4,1)
+    p_year = params[:push_year]
+    @start_at = Date.new(p_year.to_i,4,1)
     @end_at = (@start_at >> 1) - 1
     @chart = common_process(@start_at,@end_at)
   end
 
   def may   
-    @start_at = Date.new(2017,5,1)
+    p_year = params[:push_year]
+    @start_at = Date.new(p_year.to_i,5,1)
     @end_at = (@start_at >> 1) - 1
     @chart = common_process(@start_at,@end_at)
   end
 
   def june   
-    @start_at = Date.new(2017,6,1)
+    p_year = params[:push_year]
+    @start_at = Date.new(p_year.to_i,6,1)
     @end_at = (@start_at >> 1) - 1
     @chart = common_process(@start_at,@end_at)
   end
 
   def july   
-    @start_at = Date.new(2017,7,1)
+    p_year = params[:push_year]
+    @start_at = Date.new(p_year.to_i,7,1)
     @end_at = (@start_at >> 1) - 1
     @chart = common_process(@start_at,@end_at)
   end
 
   def august   
-    @start_at = Date.new(2017,8,1)
+    p_year = params[:push_year]
+    @start_at = Date.new(p_year.to_i,8,1)
     @end_at = (@start_at >> 1) - 1
     @chart = common_process(@start_at,@end_at)
   end
 
   def september  
-    @start_at = Date.new(2017,9,1)
+    p_year = params[:push_year]
+    @start_at = Date.new(p_year.to_i,9,1)
     @end_at = (@start_at >> 1) - 1
     @chart = common_process(@start_at,@end_at)
   end
 
   def october   
-    @start_at = Date.new(2017,10,1)
+    p_year = params[:push_year]
+    @start_at = Date.new(p_year.to_i,10,1)
     @end_at = (@start_at >> 1) - 1
     @chart = common_process(@start_at,@end_at)
   end
 
   def november   
-    @start_at = Date.new(2017,11,1)
+    p_year = params[:push_year]
+    @start_at = Date.new(p_year.to_i,11,1)
     @end_at = (@start_at >> 1) - 1
     @chart = common_process(@start_at,@end_at)
   end
 
-  def december    
-    @start_at = Date.new(2017,12,1)
+  def december
+    p_year = params[:push_year]
+    @start_at = Date.new(p_year.to_i,12,1)
     @end_at = (@start_at >> 1) - 1
     @chart = common_process(@start_at,@end_at)
   end
