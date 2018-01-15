@@ -1,24 +1,25 @@
+<div align="center" style="margin-top:260px;">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Date:</strong>
+  <strong>いつ？:</strong>
   <%= @plan.date %>
 </p>
 
 <p>
-  <strong>People:</strong>
+  <strong>だれと？:</strong>
   <%= @plan.people %>
 </p>
 
 <p>
-  <strong>Where:</strong>
+  <strong>どこで？:</strong>
   <%= @plan.where %>
 </p>
 
 <p>
-  <strong>What:</strong>
+  <strong>何する？:</strong>
   <%= @plan.what %>
 </p>
 
-<%= link_to 'Edit', edit_plan_path(@plan) %> |
-<%= link_to 'Back', plans_path %>
+<%= link_to '変更', edit_plan_path(@plan) %> |
+<%= link_to '戻る', plans_path %>

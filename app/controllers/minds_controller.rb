@@ -7,8 +7,8 @@ class MindsController < ApplicationController
     if params[:mind_id].present?
       @minds = Mind.where(mind_id:params[:mind_id])
     else
-      @minds = Mind.all
-     end    
+      @minds = Mind.all      
+    end    
   
   end
 
