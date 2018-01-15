@@ -6,8 +6,9 @@ class GladsController < ApplicationController
   def index
     if params[:mind_id].present?
       @glads = Glad.where(mind_id:params[:mind_id])
+      @mind_id = params[:mind_id]
     else    
-     @glads = Glad.all
+      @glads = Glad.all
     end 
   end
 
@@ -76,4 +77,4 @@ class GladsController < ApplicationController
       #params.fetch(:glad, {})
       params.require(:glad).permit(:meigen, :mind_id)
     end
-end
+  end

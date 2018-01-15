@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<div align="center" style="margin-top:230px;">
+
 <h1>名言集</h1>
 
 <table>
@@ -15,20 +17,27 @@
       <tr>
         <td><%= glad.meigen %></td>
       　<td><% glad.mind.name %></td>
-        <td><%= link_to 'Show', glad %></td>
-        <td><%= link_to 'Edit', edit_glad_path(glad) %></td>
-        <td><%= link_to 'Destroy', glad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% link_to 'Show', glad %></td>
+        <td><% link_to 'Edit', edit_glad_path(glad) %></td>
+        <td><% link_to 'Destroy', glad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to '名言を登録する', new_glad_path %>
+<% link_to '名言を登録する', new_glad_path %>
 <br>
 
+<font size="5">
 <%= link_to '音楽', musics_path %>
 <%= link_to '動画', movies_path %>
+<% if @mind_id.present? %>
+<%= link_to '画像', pictures_path(:mind_id=>@mind_id) %>
+<% else %>
+<%= link_to '画像', pictures_path %>
+<% end %>
 
-<div style="position:absolute; top:180px; left:1100px;"><%= image_tag 'ケアマックス白抜き.gif',:width => 180  %></div>
-<div style="position:absolute; top:135px; left:900px;"><%= image_tag 'メイン吹き出し.gif',:width => 200 %></div>
+
+<div style="position:absolute; top:500px; left:-50px;"><%= image_tag '横からケアマックス.gif',:width => 180  %></div>
+
 

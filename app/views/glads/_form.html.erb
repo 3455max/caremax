@@ -12,8 +12,10 @@
   <% end %>
 
   <div class="field">
+  <%= form_for @heart do |f| %>
     <%= form.label :mind %>
     <%= form.select :mind_id, Mind.all.map{ |b| [b.name, b.id] } %>
+  <% end %>
   </div>
 
   <div class="field">

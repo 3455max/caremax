@@ -13,7 +13,7 @@
 
   <div class="field">
   <%= form_for @heart do |f| %>
-    <%= form.label :feeling %>
+    <%= form.label :気持ち %>
     <%= form.select :mind_id, Mind.all.map{ |b| [b.name, b.id] } %>
   </div>
 
