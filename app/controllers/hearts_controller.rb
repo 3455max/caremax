@@ -4,7 +4,8 @@ class HeartsController < ApplicationController
   # GET /hearts
   # GET /hearts.json
   def index
-    @hearts = Heart.all    
+    @hearts = Heart.all  
+
   end
 
   # GET /hearts/1
@@ -15,10 +16,12 @@ class HeartsController < ApplicationController
   # GET /hearts/new
   def new
     @heart = Heart.new
+
   end
 
   # GET /hearts/1/edit
   def edit
+
   end
 
   # POST /hearts
@@ -28,6 +31,7 @@ class HeartsController < ApplicationController
     @heart.feeling    =params[:heart][:feeling]
     day = params[:heart]['date(1i)'] + "-" + params[:heart]['date(2i)'] + "-" + params[:heart]['date(3i)']
     @heart.date = Date.strptime(day,'%Y-%m-%d')
+
     
   if @heart.save
     redirect_to hearts_path
