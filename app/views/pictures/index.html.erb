@@ -14,16 +14,16 @@
   <tbody>
     <% @pictures.each do |picture| %>
       <tr>
-        <td><%= picture.heart %></td>
-        <td><%= picture.filename %>
+        <td><% picture.heart %></td>
+        <td><% picture.filename %>
             <% if picture.filename.present? %>
               <br>
               <%= image_tag picture.filename, {:width => '200'} %>
             <% end %>
         </td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% link_to '詳細', picture %></td>
+        <td><% link_to '変更', edit_picture_path(picture) %></td>
+        <td><% link_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Picture', new_picture_path %>
+<%= link_to '新しく画像を追加', new_picture_path %>

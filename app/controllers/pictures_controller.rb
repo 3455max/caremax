@@ -30,7 +30,8 @@ class PicturesController < ApplicationController
   # POST /pictures.json
   def create
     @picture = Picture.new
-    
+    @picture.heart = params[:picture][:heart]
+
     if params[:picture][:filename].present?
       @picture.filename = params[:picture][:filename].original_filename
 
